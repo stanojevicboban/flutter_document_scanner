@@ -40,7 +40,7 @@ class BottomBarEditPhoto extends StatelessWidget {
             // * Natural
             TextButton(
               onPressed: () =>
-                  context.read<DocumentScannerController>().applyFilter(
+                  context.read<TraitDocumentScannerController>().applyFilter(
                         FilterType.natural,
                       ),
               style: TextButton.styleFrom(
@@ -54,7 +54,7 @@ class BottomBarEditPhoto extends StatelessWidget {
             // * Gray
             TextButton(
               onPressed: () =>
-                  context.read<DocumentScannerController>().applyFilter(
+                  context.read<TraitDocumentScannerController>().applyFilter(
                         FilterType.gray,
                       ),
               style: TextButton.styleFrom(
@@ -68,7 +68,7 @@ class BottomBarEditPhoto extends StatelessWidget {
             // * ECO
             TextButton(
               onPressed: () =>
-                  context.read<DocumentScannerController>().applyFilter(
+                  context.read<TraitDocumentScannerController>().applyFilter(
                         FilterType.eco,
                       ),
               style: TextButton.styleFrom(

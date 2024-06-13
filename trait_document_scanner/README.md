@@ -59,10 +59,10 @@ Later add [camera permissions](https://pub.dev/packages/camera#installation) in 
 import 'package:trait_document_scanner/trait_document_scanner.dart';
 ```
 
-### Initialize the DocumentScannerController
+### Initialize the TraitDocumentScannerController
 
 ```dart
-final _controller = DocumentScannerController();
+final _controller = TraitDocumentScannerController();
 ```
 
 ### Display widget

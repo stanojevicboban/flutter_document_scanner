@@ -17,7 +17,7 @@ import 'package:trait_document_scanner/src/ui/pages/take_photo_document_page.dar
 import 'package:trait_document_scanner/src/utils/image_utils.dart';
 
 /// This class is responsible for controlling the scanning process
-class DocumentScannerController {
+class TraitDocumentScannerController {
   /// Creates a new instance of the [AppBloc]
   final AppBloc _appBloc = AppBloc(
     imageUtils: ImageUtils(),

@@ -18,7 +18,7 @@ import 'package:trait_document_scanner/src/utils/image_utils.dart';
 import 'package:trait_document_scanner_platform_interface/trait_document_scanner_platform_interface.dart';
 
 /// Controls interactions throughout the application by means
-/// of the [DocumentScannerController]
+/// of the [TraitDocumentScannerController]
 class AppBloc extends Bloc<AppEvent, AppState> {
   /// Create instance AppBloc
   AppBloc({

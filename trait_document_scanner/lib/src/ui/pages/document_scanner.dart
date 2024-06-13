@@ -40,8 +40,8 @@ class TraitDocumentScanner extends StatelessWidget {
   });
 
   /// Controller to execute the different functionalities
-  /// using the [DocumentScannerController]
-  final DocumentScannerController? controller;
+  /// using the [TraitDocumentScannerController]
+  final TraitDocumentScannerController? controller;
 
   /// [generalStyles] is the [GeneralStyles] that will be used to style the
   /// [DocumentScanner] widget.
@@ -77,14 +77,15 @@ class TraitDocumentScanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final Dialogs dialogs = Dialogs();
 
-    DocumentScannerController _controller = DocumentScannerController();
+    TraitDocumentScannerController _controller =
+        TraitDocumentScannerController();
     if (controller != null) {
       _controller = controller!;
     }
 
     return BlocProvider(
       create: (BuildContext context) => _controller.bloc,
-      child: RepositoryProvider<DocumentScannerController>(
+      child: RepositoryProvider<TraitDocumentScannerController>(
         create: (context) => _controller,
         child: MultiBlocListener(
           listeners: [

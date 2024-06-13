@@ -11,7 +11,7 @@ class BasicPage extends StatefulWidget {
 }
 
 class _BasicPageState extends State<BasicPage> {
-  final _controller = DocumentScannerController();
+  final _controller = TraitDocumentScannerController();
 
   @override
   void dispose() {

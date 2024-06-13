@@ -40,7 +40,7 @@ class AppBarEditPhoto extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () =>
-                  context.read<DocumentScannerController>().changePage(
+                  context.read<TraitDocumentScannerController>().changePage(
                         AppPages.cropPhoto,
                       ),
               icon: const Icon(
@@ -51,8 +51,9 @@ class AppBarEditPhoto extends StatelessWidget {
 
             // * Crop photo
             TextButton(
-              onPressed: () =>
-                  context.read<DocumentScannerController>().savePhotoDocument(),
+              onPressed: () => context
+                  .read<TraitDocumentScannerController>()
+                  .savePhotoDocument(),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
               ),

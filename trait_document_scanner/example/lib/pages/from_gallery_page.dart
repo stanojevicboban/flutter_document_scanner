@@ -13,7 +13,7 @@ class FromGalleryPage extends StatefulWidget {
 }
 
 class _FromGalleryPageState extends State<FromGalleryPage> {
-  final controller = DocumentScannerController();
+  final controller = TraitDocumentScannerController();
   bool imageIsSelected = false;
 
   @override

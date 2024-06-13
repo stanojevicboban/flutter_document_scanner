@@ -11,7 +11,7 @@ class CustomPage extends StatefulWidget {
 }
 
 class _CustomPageState extends State<CustomPage> {
-  final _controller = DocumentScannerController();
+  final _controller = TraitDocumentScannerController();
 
   @override
   void dispose() {

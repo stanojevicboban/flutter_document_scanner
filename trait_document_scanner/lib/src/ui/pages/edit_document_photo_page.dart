@@ -64,7 +64,7 @@ class EditDocumentPhotoPage extends StatelessWidget {
 
   Future<bool> _onPop(BuildContext context) async {
     await context
-        .read<DocumentScannerController>()
+        .read<TraitDocumentScannerController>()
         .changePage(AppPages.cropPhoto);
     return false;
   }
