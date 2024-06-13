@@ -22,7 +22,7 @@ class _CustomPageState extends State<CustomPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DocumentScanner(
+      body: TraitDocumentScanner(
         controller: _controller,
         generalStyles: const GeneralStyles(
           hideDefaultBottomNavigation: true,

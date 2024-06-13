@@ -40,7 +40,7 @@ class _FromGalleryPageState extends State<FromGalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DocumentScanner(
+      body: TraitDocumentScanner(
         controller: controller,
         generalStyles: GeneralStyles(
           showCameraPreview: false,

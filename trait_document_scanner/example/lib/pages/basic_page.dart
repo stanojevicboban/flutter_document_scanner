@@ -22,7 +22,7 @@ class _BasicPageState extends State<BasicPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: DocumentScanner(
+      body: TraitDocumentScanner(
         controller: _controller,
         cropPhotoDocumentStyle: CropPhotoDocumentStyle(
           top: MediaQuery.of(context).padding.top,

@@ -1,16 +1,16 @@
-name: flutter_document_scanner_android
+name: trait_document_scanner_android
 
 on:
   pull_request:
     paths:
-      - ".github/workflows/flutter_document_scanner_android.yaml"
-      - "src/flutter_document_scanner_android/**"
+      - ".github/workflows/trait_document_scanner_android.yaml"
+      - "src/trait_document_scanner_android/**"
   push:
     branches:
       - main
     paths:
-      - ".github/workflows/flutter_document_scanner_android.yaml"
-      - "src/flutter_document_scanner_android/**"
+      - ".github/workflows/trait_document_scanner_android.yaml"
+      - "src/trait_document_scanner_android/**"
 
 jobs:
   build:
@@ -18,4 +18,4 @@ jobs:
     with:
       flutter_channel: stable
       flutter_version: 3.0.0
-      working_directory: src/flutter_document_scanner_android
+      working_directory: src/trait_document_scanner_android

@@ -1,0 +1,85 @@
+// Copyright (c) 2021, Christian Betancourt
+// https://github.com/criistian14
+//
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+import 'package:trait_document_scanner_platform_interface/trait_document_scanner_platform_interface.dart';
+
+/// The iOS implementation of [TraitDocumentScannerPlatform].
+class TraitDocumentScannerIOS extends TraitDocumentScannerPlatform {
+  /// The method channel used to interact with the native platform.
+  @visibleForTesting
+  final methodChannel = const MethodChannel('trait_document_scanner_ios');
+
+  /// Registers this class as the default instance
+  /// of [TraitDocumentScannerPlatform]
+  static void registerWith() {
+    TraitDocumentScannerPlatform.instance = TraitDocumentScannerIOS();
+  }
+
+  @override
+  Future<String?> getVersionOpenCV() async {
+    return methodChannel.invokeMethod<String?>('getVersionOpenCV');
+  }
+
+  @override
+  Future<Contour?> findContourPhoto({
+    required Uint8List byteData,
+    required double minContourArea,
+  }) async {
+    final contour = await methodChannel.invokeMapMethod<String, dynamic>(
+      'findContourPhoto',
+      <String, Object>{
+        'byteData': byteData,
+        'minContourArea': minContourArea,
+      },
+    );
+
+    if (contour != null) {
+      return Contour.fromMap(contour);
+    }
+
+    return null;
+  }
+
+  @override
+  Future<Uint8List?> adjustingPerspective({
+    required Uint8List byteData,
+    required Contour contour,
+  }) async {
+    final newImage = await methodChannel.invokeMethod<Uint8List?>(
+      'adjustingPerspective',
+      <String, Object>{
+        'byteData': byteData,
+        'points': contour.points
+            .map(
+              (e) => {
+                'x': e.x,
+                'y': e.y,
+              },
+            )
+            .toList(),
+      },
+    );
+
+    return newImage;
+  }
+
+  @override
+  Future<Uint8List?> applyFilter({
+    required Uint8List byteData,
+    required FilterType filter,
+  }) async {
+    return methodChannel.invokeMethod<Uint8List>(
+      'applyFilter',
+      <String, Object>{
+        'byteData': byteData,
+        'filter': filter.value,
+      },
+    ).then((value) => value);
+  }
+}
